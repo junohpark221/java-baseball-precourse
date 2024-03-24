@@ -5,3 +5,12 @@
 
 ## 과제 제출 과정
 * [과제 제출 방법](https://github.com/next-step/nextstep-docs/tree/master/precourse)
+
+## 구현 기능 정리
+* 컴퓨터의 숫자(난수) 생성
+* 사용자로부터 입력 받기
+* 입력값과 비교하여 스트라이크/볼/낫싱 판독
+* 결과 출력
+* 게임 종료 후 재시작/완전 종료 처리
+* Invalid Input이 들어올 경우, ERROR 처리
+* 단위 테스트
