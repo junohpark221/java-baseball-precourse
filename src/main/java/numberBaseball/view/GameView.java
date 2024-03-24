@@ -8,9 +8,14 @@ public class GameView {
     private final String STRIKE = "스트라이크 ";
     private final String BALL = "볼";
     private final String END_MESSAGE = "3개의 숫자를 모두 맞히셨습니다! 게임 끝";
+    private final String REPLAY_MESSAGE = "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.";
 
     public void printRequestingUserNumber() {
         System.out.println(USER_NUMBER_INPUT_TEXT);
+    }
+
+    public void printReplayingOption() {
+        System.out.println(REPLAY_MESSAGE);
     }
 
     public void printResult(Result result) {
