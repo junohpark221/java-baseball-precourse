@@ -29,7 +29,7 @@ public class GameController {
         do {
             UserPlayer userPlayer = createUserPlayer();
             Result result = userPlayer.getResult(computerPlayer.getNumbers());
-
+            gameView.printResult(result);
             correct = result.isCorrect();
         } while (!correct);
     }
