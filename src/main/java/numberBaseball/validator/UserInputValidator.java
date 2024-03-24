@@ -1,15 +1,25 @@
 package numberBaseball.validator;
 
+import numberBaseball.view.ErrorView;
+
 import java.util.HashSet;
 import java.util.Set;
 
 public class UserInputValidator {
+    private final ErrorView errorView;
+
+    public UserInputValidator() {
+        this.errorView = new ErrorView();
+    }
+
     public boolean validateUserInput(String userInput) {
         if (!validateLength(userInput)) {
+            errorView.printInputLengthError();
             return false;
         }
 
         if (!validateValue(userInput)) {
+            errorView.printInputValueError();
             return false;
         }
 
