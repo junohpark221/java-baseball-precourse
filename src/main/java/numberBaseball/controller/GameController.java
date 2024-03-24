@@ -1,6 +1,7 @@
 package numberBaseball.controller;
 
 import numberBaseball.model.ComputerPlayer;
+import numberBaseball.model.Result;
 import numberBaseball.model.UserPlayer;
 import numberBaseball.validator.UserInputValidator;
 import numberBaseball.view.GameView;
@@ -11,8 +12,6 @@ public class GameController {
     private final GameView gameView;
     private final UserInputValidator userInputValidator;
     private final Scanner scanner = new Scanner(System.in);
-
-    private boolean replay = false;
 
     public GameController() {
         this.gameView = new GameView();
@@ -25,8 +24,14 @@ public class GameController {
 
     public void playGame() {
         ComputerPlayer computerPlayer = new ComputerPlayer();
+        boolean correct;
 
-        UserPlayer userPlayer = createUserPlayer();
+        do {
+            UserPlayer userPlayer = createUserPlayer();
+            Result result = userPlayer.getResult(computerPlayer.getNumbers());
+
+            correct = result.isCorrect();
+        } while (!correct);
     }
 
     public UserPlayer createUserPlayer() {
